@@ -1,7 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
-
-
 public class SuperdigitCalculator {
 
 
@@ -14,10 +10,10 @@ public class SuperdigitCalculator {
     public long calculateSuperDigitOf(String number) {
 
         if (number.length() == 1) return Long.valueOf(number);
-        List<Long> digits = new ArrayList<>();
+        long sum = 0;
 
         while (number.length() > 0) {
-            digits.add(Long.valueOf(stringManipulator.getLastCharFrom(number)));
+            sum = sum + Long.valueOf(stringManipulator.getLastCharFrom(number));
 
             if (number.length() == 1){
                 break;
@@ -25,14 +21,9 @@ public class SuperdigitCalculator {
 
             number = stringManipulator.removeLastCharFrom(number);
         }
-        String result = calculateSumOf(digits);
+        String result = String.valueOf(sum);
 
         return calculateSuperDigitOf(result);
-    }
-
-    String calculateSumOf(List<Long> digits) {
-        return digits.stream().reduce(0L,
-                (a, b) -> a = a + b).toString();
     }
 
 }
