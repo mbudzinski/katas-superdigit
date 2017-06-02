@@ -3,7 +3,7 @@
  */
 public class StringManipulator {
 
-    public String removeLastCharFrom(String string) {
+    public String removeLastCharFrom(String strng) {
         return string.substring(0, string.length() - 1);
     }
 

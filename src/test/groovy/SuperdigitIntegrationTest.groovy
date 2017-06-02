@@ -5,8 +5,7 @@ class SuperdigitIntegrationTest extends Specification{
 
     def 'Superdigit of 98741 equals to 2' () {
         given:
-            def stringManipulator = new StringManipulator()
-            def superdigitCalculator = new SuperdigitCalculator(stringManipulator)
+            def superdigitCalculator = new SuperdigitCalculator()
         when:
             def result = superdigitCalculator.calculateSuperDigitOf("98741")
         then:
