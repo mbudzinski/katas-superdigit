@@ -7,9 +7,11 @@ class SuperdigitIntegrationTest extends Specification{
         given:
             def superdigitCalculator = new SuperdigitCalculator()
         when:
-            def result = superdigitCalculator.calculateSuperDigitOf("98741")
+            def imperativeResult = superdigitCalculator.imperativelyCalculateSuperDigitOf("98741")
+            def functionalResult = superdigitCalculator.functionallyCalculateSuperDigitOf("98741")
         then:
-            Long.valueOf(result) == 2L
+            Long.valueOf(functionalResult) == 2L
+            Long.valueOf(imperativeResult) == 2L
     }
 
 }
