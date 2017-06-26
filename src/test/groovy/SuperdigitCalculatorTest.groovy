@@ -16,6 +16,17 @@ class SuperdigitCalculatorTest extends Specification {
             input << ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
     }
 
-
-
+    def 'The result is always a single digit'() {
+        given:
+            def superdigitCalculator = new SuperdigitCalculator()
+        when:
+            def functionalResult = superdigitCalculator.functionallyCalculateSuperDigitOf(input)
+            def imperativeResult = superdigitCalculator.imperativelyCalculateSuperDigitOf(input)
+        then:
+            functionalResult >= 0 && functionalResult <= 9
+            imperativeResult >= 0 && imperativeResult <= 9
+        where:
+            input << ["35763563", "542542", "246554367654874", "25346745254385", "9769567845",
+                      "123143215", "1111111111", "10000000", "8487548", "21"]
+    }
 }

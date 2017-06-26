@@ -1,7 +1,6 @@
 
 public class SuperdigitCalculator {
 
-
     public long imperativelyCalculateSuperDigitOf(String number) {
 
         if (number.length() == 1) return Long.valueOf(number);
