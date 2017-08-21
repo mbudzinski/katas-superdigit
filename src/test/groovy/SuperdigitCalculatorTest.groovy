@@ -17,6 +17,7 @@ class SuperdigitCalculatorTest extends Specification {
     }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     def 'The result is always a single digit'() {
         given:
             def superdigitCalculator = new SuperdigitCalculator()
@@ -31,6 +32,8 @@ class SuperdigitCalculatorTest extends Specification {
                       "123143215", "1111111111", "10000000", "8487548", "21"]
     }
 =======
+=======
+>>>>>>> Stashed changes
     def ''() {
         given:
             def superdigitCalculator = new SuperdigitCalculator()
