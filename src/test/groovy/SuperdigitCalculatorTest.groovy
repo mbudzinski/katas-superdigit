@@ -46,10 +46,11 @@ class SuperdigitCalculatorTest extends Specification {
         when:
             superdigitCalculator.functionallyCalculateSuperDigitOf(inputLessThan0)
             superdigitCalculator.imperativelyCalculateSuperDigitOf(inputLessThan0)
+        then:
+            thrown(IllegalArgumentException)
         where:
             inputLessThan0 << ['-1', '-9999999999999999']
-        expect:
-            thrown(IllegalArgumentException)
+
     }
 
     SuperdigitCalculator superdigitCalculator = new SuperdigitCalculator()
