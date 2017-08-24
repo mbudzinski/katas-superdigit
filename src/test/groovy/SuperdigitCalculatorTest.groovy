@@ -42,6 +42,15 @@ class SuperdigitCalculatorTest extends Specification {
             input << ['222', '111', '521']
     }
 
+    def 'Numbers less than 0 are not accepted'() {
+        when:
+            superdigitCalculator.functionallyCalculateSuperDigitOf(inputLessThan0)
+            superdigitCalculator.imperativelyCalculateSuperDigitOf(inputLessThan0)
+        where:
+            inputLessThan0 << ['-1', '-9999999999999999']
+        expect:
+            thrown(IllegalArgumentException)
+    }
 
     SuperdigitCalculator superdigitCalculator = new SuperdigitCalculator()
 
