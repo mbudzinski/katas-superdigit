@@ -4,8 +4,6 @@ import spock.lang.Specification
 class SuperdigitCalculatorTest extends Specification {
 
      def 'For single digit numbers the number itself is passed as the result'() {
-        given:
-            def superdigitCalculator = new SuperdigitCalculator()
         when:
             def functionalResult = superdigitCalculator.functionallyCalculateSuperDigitOf(input)
             def imperativeResult = superdigitCalculator.imperativelyCalculateSuperDigitOf(input)
@@ -17,8 +15,6 @@ class SuperdigitCalculatorTest extends Specification {
     }
 
     def 'The result is always a single digit'() {
-        given:
-            def superdigitCalculator = new SuperdigitCalculator()
         when:
             def functionalResult = superdigitCalculator.functionallyCalculateSuperDigitOf(input)
             def imperativeResult = superdigitCalculator.imperativelyCalculateSuperDigitOf(input)
@@ -31,8 +27,6 @@ class SuperdigitCalculatorTest extends Specification {
     }
 
     def 'When the number of superdigit cycles is the same for the input and incremented input then the result from incremented input is larger by 1'() {
-        given:
-            def superdigitCalculator = new SuperdigitCalculator()
         when:
             def inputIncremented = input + 1
             def functionalResult = superdigitCalculator.functionallyCalculateSuperDigitOf(input)
@@ -40,8 +34,6 @@ class SuperdigitCalculatorTest extends Specification {
             def functionalIncrementedResult = superdigitCalculator.functionallyCalculateSuperDigitOf(inputIncremented)
             def imperativeIncrementedResult = superdigitCalculator.functionallyCalculateSuperDigitOf(inputIncremented)
         then:
-            functionalResult.toString() == input
-            imperativeResult.toString() == input
             functionalIncrementedResult == functionalResult + 1
             imperativeIncrementedResult == imperativeResult + 1
             functionalResult == imperativeResult
@@ -49,4 +41,8 @@ class SuperdigitCalculatorTest extends Specification {
         where:
             input << ['222', '111', '521']
     }
+
+
+    SuperdigitCalculator superdigitCalculator = new SuperdigitCalculator()
+
 }
